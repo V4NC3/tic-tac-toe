@@ -1,0 +1,26 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebundle": "cp src/index.html dist/index.html",
+    "bundle": "browserify src/game-start.js -t babelify --outfile dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V4NC3/tic-tac-toe.git"
+  },
+  "author": "V4NC3",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/V4NC3/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/V4NC3/tic-tac-toe#readme",
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.2"
+  }
+}
