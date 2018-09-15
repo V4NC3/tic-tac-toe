@@ -7,4 +7,11 @@ export class ListComponent extends SimpleComponent {
     super(selector);
     this.items = [];
   }
+
+  getItem(index) {
+    if (typeof index !== "number")
+      throw Error("getRow must have a number as an argument");
+    if (index < 0 || index > this.items.length) throw Error("out of Bounds");
+    return this.items[index];
+  }
 }
