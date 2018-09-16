@@ -15,5 +15,12 @@ export class Notice extends SimpleComponent {
       "position: absolute; top: 20%; background-color: white; z-index: 11;" +
         "text-align: center; front-family: Monospace; font-size: 25px; width 100%;"
     );
+    this.element.textContext = text;
+    this.BackgroundPane = new BackgroundPane();
+
+    document.body.appendChild(this.BackgroundPane.element);
+    document.body.appendChild(this.element);
+
+    setTimeout(() => this.removeElements(), interval);
   }
 }
