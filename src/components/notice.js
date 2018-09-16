@@ -23,4 +23,9 @@ export class Notice extends SimpleComponent {
 
     setTimeout(() => this.removeElements(), interval);
   }
+
+  removeElements() {
+    this.BackgroundPane.destroy();
+    this.destroy();
+  }
 }
