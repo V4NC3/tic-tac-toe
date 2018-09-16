@@ -16,4 +16,10 @@ export class TurnInformation extends SimpleComponent {
     this.element.appendChild(this.currentTurn.element);
     this.element.appendChild(this.symbol.element);
   }
+
+  /* updates both components */
+  update(turn, symbol) {
+    this.currentTurn.textContent = turn || 0;
+    this.symbol.textContent = symbol || "";
+  }
 }
