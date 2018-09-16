@@ -12,5 +12,8 @@ export class TurnInformation extends SimpleComponent {
       "style",
       "text-transform: uppercase; font-size: 30px; height: 40px; display: block; font-family: Monospace"
     );
+
+    this.element.appendChild(this.currentTurn.element);
+    this.element.appendChild(this.symbol.element);
   }
 }
