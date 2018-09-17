@@ -46,4 +46,20 @@ export class GameHud {
   get isGameEnd() {
     return this.gameEngine.isWinner || this.gameEngine.isTie;
   }
+
+  /* Show GameEnd notice and restart game */
+  processGameEnd() {
+    let winner = false;
+    if (this.gameEngine.isWinner) {
+      new Notice(
+        `Game End! Winner is ${this.gameEngine.turnOf}! Game took ${
+          this.turns
+        } turns`,
+        1500
+      );
+      winner = this.gameEngine.turnOf;
+    } else if (this.gameEngine.isTie) {
+      new Notice(`Game End! It's a Tie! Game took ${this.turns}`);
+    }
+  }
 }
