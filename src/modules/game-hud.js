@@ -37,5 +37,8 @@ export class GameHud {
 
     /* Append the GameField element to the body of the page */
     document.body.appendChild(this.gameField.element);
+
+    /* Show Notice to user and update the turn info via TurnInfo */
+    new Notice(`Game Start! First to Play: ${this.gameEngine.turnOf}`, 3000);
   }
 }
