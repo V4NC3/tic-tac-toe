@@ -34,5 +34,8 @@ export class GameHud {
         );
       });
     });
+
+    /* Append the GameField element to the body of the page */
+    document.body.appendChild(this.gameField.element);
   }
 }
