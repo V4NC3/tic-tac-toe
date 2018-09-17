@@ -79,5 +79,14 @@ export class GameHud {
       new Notice("This field is already occupied");
       return;
     }
+
+    this.turns++;
+
+    if (this.isGameEnd) {
+      this.processGameEnd();
+    } else {
+      this.gameEngine.toggleTurn();
+      this.turnInfo.update(this.turns, this.gameEngine.turnOf);
+    }
   }
 }
