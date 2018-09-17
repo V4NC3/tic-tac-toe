@@ -1,4 +1,4 @@
-import { GameEngine } from "../lib/game-engine";
+import { GameEngine } from "../libs/game-engine";
 import { GameField } from "../components/game-field";
 import { Notice } from "../components/notice";
 import { TurnInformation } from "../components/turn-information";
@@ -16,7 +16,7 @@ export class GameHud {
   }
 
   createGameField(lastWinner = "x") {
-    this.turn = 0;
+    this.turns = 0;
     this.gameEngine = new GameEngine(["x", "o"], lastWinner);
 
     /* If GameField component exists in the page, remove that child from the body so we can insert a new/clean one */
@@ -59,7 +59,11 @@ export class GameHud {
       );
       winner = this.gameEngine.turnOf;
     } else if (this.gameEngine.isTie) {
-      new Notice(`Game End! It's a Tie! Game took ${this.turns}`);
+      new Notice(`Game End! It's a Tie! Game took ${this.turns} turns`, 1500);
     }
+
+    setTimeout(() => {
+      this.createGameField(winner);
+    }, 1500);
   }
 }
