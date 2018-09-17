@@ -40,5 +40,6 @@ export class GameHud {
 
     /* Show Notice to user and update the turn info via TurnInfo */
     new Notice(`Game Start! First to Play: ${this.gameEngine.turnOf}`, 3000);
+    this.turnInfo.update(this.turns, this.gameEngine.turnOf);
   }
 }
