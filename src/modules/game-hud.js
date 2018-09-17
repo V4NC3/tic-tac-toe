@@ -22,5 +22,8 @@ export class GameHud {
     /* If GameField component exists in the page, remove that child from the body so we can insert a new/clean one */
     const oldGameField = document.querySelector("game-field");
     if (oldGameField) document.body.removeChild(oldGameField);
+
+    /* New GameField component */
+    this.gameField = new GameField(this.gameEngine.field);
   }
 }
