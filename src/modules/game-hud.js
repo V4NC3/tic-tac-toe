@@ -18,5 +18,9 @@ export class GameHud {
   createGameField(lastWinner = "x") {
     this.turn = 0;
     this.gameEngine = new GameEngine(["x", "o"], lastWinner);
+
+    /* If GameField component exists in the page, remove that child from the body so we can insert a new/clean one */
+    const oldGameField = document.querySelector("game-field");
+    if (oldGameField) document.body.removeChild(oldGameField);
   }
 }
