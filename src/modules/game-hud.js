@@ -66,4 +66,12 @@ export class GameHud {
       this.createGameField(winner);
     }, 1500);
   }
+
+  /* Occupying the fields */
+  occupyField(element) {
+    let coords = {
+      row: parseInt(element.target.getAttribute("slot-row"), 10),
+      column: parseInt(element.target.getAttribute("slot-column"), 10)
+    };
+  }
 }
