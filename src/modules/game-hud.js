@@ -25,5 +25,14 @@ export class GameHud {
 
     /* New GameField component */
     this.gameField = new GameField(this.gameEngine.field);
+
+    /* Click events to the GameSlot */
+    this.gameField.items.forEach(row => {
+      row.items.forEach(slot => {
+        slot.element.addEventListener("click", element =>
+          this.occupyField(element)
+        );
+      });
+    });
   }
 }
