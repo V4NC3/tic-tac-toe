@@ -73,5 +73,11 @@ export class GameHud {
       row: parseInt(element.target.getAttribute("slot-row"), 10),
       column: parseInt(element.target.getAttribute("slot-column"), 10)
     };
+
+    let turnAction = this.gameEngine.occupyField(coords);
+    if (!turnAction) {
+      new Notice("This field is already occupied");
+      return;
+    }
   }
 }
