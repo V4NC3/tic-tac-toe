@@ -88,5 +88,9 @@ export class GameHud {
       this.gameEngine.toggleTurn();
       this.turnInfo.update(this.turns, this.gameEngine.turnOf);
     }
+
+    this.gameField
+      .getItem(turnAction.row)
+      .getItem(turnAction.column).textContent = turnAction;
   }
 }
