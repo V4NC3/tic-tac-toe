@@ -14,4 +14,9 @@ export class GameHud {
     document.body.appendChild(this.turnInfo.element);
     this.createGameField(false);
   }
+
+  createGameField(lastWinner = "x") {
+    this.turn = 0;
+    this.gameEngine = new GameEngine(["x", "o"], lastWinner);
+  }
 }
