@@ -42,4 +42,8 @@ export class GameHud {
     new Notice(`Game Start! First to Play: ${this.gameEngine.turnOf}`, 3000);
     this.turnInfo.update(this.turns, this.gameEngine.turnOf);
   }
+
+  get isGameEnd() {
+    return this.gameEngine.isWinner || this.gameEngine.isTie;
+  }
 }
