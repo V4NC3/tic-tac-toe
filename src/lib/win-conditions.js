@@ -45,5 +45,14 @@ export class WinCondition {
       (!this.field[length][0].occupied || !this.field[0][0].occupied)
       )
       return false;
+
+      /* Checking which column is occupied and which symbol */
+      let column =
+      this.field[0][0].occupied && this.field[0][0].symbol === symbol
+        ? 0
+        : this.field[0][length].occupied &&
+          this.field[0][length].symbol === symbol
+          ? length
+          : false;
   }
 }
