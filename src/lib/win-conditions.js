@@ -23,7 +23,14 @@ export class WinCondition {
   verticalLine() {
     return this.field.some((row, index) => {
       let inspectingColumn = [];
-      for (let x = this.field.length - 1; x > -1; x--) {}
+      for (let x = this.field.length - 1; x > -1; x--) {
+        inspectingColumn.push(this.field[x][index]);
+      }
+      return (
+        inspectingColumn.every(
+          slot => slot.occupied && slot.symbol == symbol
+        ) && inspectingColumn
+      );
     });
   }
 }
