@@ -40,5 +40,10 @@ export class WinCondition {
     const middle = length / 2;
 
     /* Checking if the middle and one of the corners are unoccupid, if true then there isnt a winner at this time which will return false */
+    if ( 
+      !this.field[middle][middle].occupied && 
+      (!this.field[length][0].occupied || !this.field[0][0].occupied)
+      )
+      return false;
   }
 }
