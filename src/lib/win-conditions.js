@@ -36,23 +36,26 @@ export class WinCondition {
 
   /* Diagonal line, checking if the center field is being used or empty */
   diagonalLine(symbol) {
-    cosnt length = this.field.length -1;
+    const length = this.field.length - 1;
     const middle = length / 2;
 
     /* Checking if the middle and one of the corners are unoccupid, if true then there isnt a winner at this time which will return false */
-    if ( 
-      !this.field[middle][middle].occupied && 
+    if (
+      !this.field[middle][middle].occupied &&
       (!this.field[length][0].occupied || !this.field[0][0].occupied)
-      )
+    )
       return false;
 
-      /* Checking which column is occupied and which symbol */
-      let column =
+    /* Checking which column is occupied and which symbol */
+    let column =
       this.field[0][0].occupied && this.field[0][0].symbol === symbol
         ? 0
         : this.field[0][length].occupied &&
           this.field[0][length].symbol === symbol
           ? length
           : false;
+
+    /* Checking the assigned number in the column to see if the corners are occupied */
+    if (typeof column !== "number") return false;
   }
 }
