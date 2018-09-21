@@ -72,5 +72,11 @@ export class WinCondition {
         row++;
       }
     }
+    /* If the items in the temp array is true, then there is a diagonal winner */
+    return (
+      inspectingDiagonal.every(
+        slot => slot.occupied && slot.symbol == symbol
+      ) && inspectingDiagonal
+    );
   }
 }
