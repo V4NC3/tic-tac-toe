@@ -87,4 +87,13 @@ export class WinCondition {
     const flattenedField = flatten(this.field);
     return flattenedField.every(slot => slot.occupied === true);
   }
+
+  /* Created an alias for easy usage */
+  hasLine(symbol) {
+    return (
+      this.horizontalLine(symbol) ||
+      this.verticalLine(symbol) ||
+      this.diagonalLine(symbol)
+    );
+  }
 }
