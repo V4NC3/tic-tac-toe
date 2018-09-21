@@ -79,4 +79,12 @@ export class WinCondition {
       ) && inspectingDiagonal
     );
   }
+
+  /* Tied Game */
+  get tieExists() {
+    const flatten = arr =>
+      arr.reduce((a, b) => a.concat(Array.isArray(b) ? flatten(b) : b), []);
+    const flattenedField = flatten(this.field);
+    return flattenedField.every(slot => slot.occupied === true);
+  }
 }
