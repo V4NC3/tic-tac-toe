@@ -33,4 +33,20 @@ export class GameEngine {
   isTurnOf(symbol) {
     return this.turnOf === symbol;
   }
+
+  toggleTurn() {
+    return (this.turnOf = this.turnOf === this.symbols[0]);
+  }
+
+  /* Update the slot state to occupied with symbols matching */
+  occupyField(coords) {
+    if (this.occupyField.isOutOfBounds(coords)) return false;
+
+    let slot = this.field[coords.row][coords.column];
+    if (slot.occupied) return false;
+
+    slot.occupied = true;
+    slot.symbol = this.turnOf;
+    return slot;
+  }
 }
