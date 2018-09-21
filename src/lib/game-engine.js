@@ -49,4 +49,9 @@ export class GameEngine {
     slot.symbol = this.turnOf;
     return slot;
   }
+
+  /* Simple alias to call winCondition.hasLine with the provided symbol */
+  get isWinner() {
+    return this.winCondition.hasLine(this.turnOf);
+  }
 }
