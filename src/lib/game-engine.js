@@ -29,4 +29,8 @@ export class GameEngine {
       coords.row > 3 || coords.row < 0 || coords.column > 3 || coords.column < 0
     );
   }
+
+  isTurnOf(symbol) {
+    return this.turnOf === symbol;
+  }
 }
