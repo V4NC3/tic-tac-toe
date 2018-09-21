@@ -16,4 +16,17 @@ export class GameEngine {
     this.field = createSquare(3);
     this.winCondition = new WinCondition(this.field);
   }
+
+  /* Creating a 3 by 3 square, anything beyond and anything less than 0 is out of bounds */
+  isOutOfBounds(coords) {
+    if (
+      !coords ||
+      typeof coords.row !== "number" ||
+      typeof coords.column !== "number"
+    )
+      return true;
+    return (
+      coords.row > 3 || coords.row < 0 || coords.column > 3 || coords.column < 0
+    );
+  }
 }
