@@ -54,4 +54,8 @@ export class GameEngine {
   get isWinner() {
     return this.winCondition.hasLine(this.turnOf);
   }
+
+  get isTie() {
+    return this.winCondition.tieExists;
+  }
 }
