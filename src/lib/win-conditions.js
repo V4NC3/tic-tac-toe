@@ -57,5 +57,20 @@ export class WinCondition {
 
     /* Checking the assigned number in the column to see if the corners are occupied */
     if (typeof column !== "number") return false;
+
+    /* Looping through the diagonal line, checking for diagonal it is (last or first) to increment or decrement for condition which is responsible to push the slots to the temporary array */
+    let inspectingDiagonal = [];
+    let row = 0;
+    if (column === 0) {
+      for (column; column <= length; column++) {
+        inspectingDiagonal.push(this.field[row][column]);
+        row++;
+      }
+    } else {
+      for (column; column >= 0; column--) {
+        inspectingDiagonal.push(this.field[row][column]);
+        row++;
+      }
+    }
   }
 }
