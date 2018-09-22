@@ -35,12 +35,13 @@ export class GameEngine {
   }
 
   toggleTurn() {
-    return (this.turnOf = this.turnOf === this.symbols[0]);
+    return (this.turnOf =
+      this.turnOf === this.symbols[0] ? this.symbols[1] : this.symbols[0]);
   }
 
   /* Update the slot state to occupied with symbols matching */
   occupyField(coords) {
-    if (this.occupyField.isOutOfBounds(coords)) return false;
+    if (this.isOutOfBounds(coords)) return false;
 
     let slot = this.field[coords.row][coords.column];
     if (slot.occupied) return false;
@@ -54,7 +55,6 @@ export class GameEngine {
   get isWinner() {
     return this.winCondition.hasLine(this.turnOf);
   }
-
   get isTie() {
     return this.winCondition.tieExists;
   }

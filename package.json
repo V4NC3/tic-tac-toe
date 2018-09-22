@@ -4,10 +4,11 @@
   "description": "Tic-Tac-Toe",
   "main": "index.js",
   "browserify": {
-    "transform": ["babelify"]
+    "transform": [
+      "babelify"
+    ]
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prebundle": "cp src/index.html dist/index.html",
     "bundle": "browserify src/game-start.js -t babelify --outfile dist/bundle.js"
   },
@@ -22,8 +23,14 @@
   },
   "homepage": "https://github.com/V4NC3/tic-tac-toe#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-latest": "^6.24.1",
-    "babelify": "^10.0.0",
+    "babelify": "^8.0.0",
     "browserify": "^16.2.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.1.0",
+    "gulp-babel": "^8.0.0"
   }
 }

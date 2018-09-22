@@ -1,2 +1,2 @@
-import { GameHub } from "./modules/game-hud";
-document.addEventListener("DOMContentLoaded", () => new GameHub());
+import { GameHud } from "./modules/game-hud";
+document.addEventListener("DOMContentLoaded", () => new GameHud());
