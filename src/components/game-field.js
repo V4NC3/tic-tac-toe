@@ -1,4 +1,4 @@
-import { ListComponent } from "./game-slot";
+import { ListComponent } from "../libs/list-component";
 import { GameRow } from "./game-row";
 
 /* GameField is responsible for creating the actual elements. It iterates over the field from GameEngine, creating a row via GameRow and column via GameSlot */
@@ -8,7 +8,7 @@ export class GameField extends ListComponent {
     super("game-field");
     let gameRow;
     this.items = [];
-    this.element.setAtrribute(
+    this.element.setAttribute(
       "style",
       "font-family: Monospace; text-align: center"
     );

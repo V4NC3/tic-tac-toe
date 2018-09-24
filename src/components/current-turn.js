@@ -1,10 +1,10 @@
-import { WritableComponent } from "../lib/writable-component";
+import { WritableComponent } from "../libs/writable-component";
 
 /* Writing the Current player turn -  holds the current turn number */
 export class CurrentTurn extends WritableComponent {
   constructor() {
     super("current-turn");
-    this.element.setAtrribute("style", "float: left");
+    this.element.setAttribute("style", "float: left");
   }
 
   set textContent(v) {

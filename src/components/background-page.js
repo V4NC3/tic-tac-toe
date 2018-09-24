@@ -1,4 +1,4 @@
-import { SimpleComponent } from "../lib/simple-component";
+import { SimpleComponent } from "../libs/simple-component";
 
 /* Semi-transparent back-pane to let the client knows who's turn */
 export class BackgroundPane extends SimpleComponent {
@@ -7,7 +7,7 @@ export class BackgroundPane extends SimpleComponent {
     this.element.setAttribute(
       "style",
       "position: absolute; top: 0; height: 100%; width: 100%;" +
-        "background-color: black; opacity: .5; z-index:10"
+        "background-color: black; opacity: .5; z-index: 10"
     );
   }
 }

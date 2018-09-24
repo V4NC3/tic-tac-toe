@@ -1,4 +1,4 @@
-import { SimpleComponent } from "../lib/simple-component";
+import { SimpleComponent } from "../libs/simple-component";
 import { BackgroundPane } from "./background-page";
 
 /* Notice Component - show the user any special message and will auto-delete after X seconds */

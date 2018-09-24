@@ -1,4 +1,4 @@
-import { SimpleComponent } from "../lib/simple-component";
+import { SimpleComponent } from "../libs/simple-component";
 import { PlaySymbol } from "./play-symbol";
 import { CurrentTurn } from "./current-turn";
 

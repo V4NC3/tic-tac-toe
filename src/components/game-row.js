@@ -1,4 +1,4 @@
-import { ListComponent } from "../lib/list-component";
+import { ListComponent } from "../libs/list-component";
 import { GameSlot } from "./game-slot";
 
 /* GameRow iterates the rows to create the respective GameSlot */

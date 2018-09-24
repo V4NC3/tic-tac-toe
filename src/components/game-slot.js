@@ -1,9 +1,8 @@
-import { WritableComponent } from "../lib/writable-component";
+import { WritableComponent } from "../libs/writable-component";
 
 /* GameSlot Class that's maintaining the visual correlation between the GameEngine */
 export class GameSlot extends WritableComponent {
   /* Class takes slot as an argument */
-
   constructor(slot) {
     super("game-slot");
 
